@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plagiarism Detection Studio</title>
+    <meta
+      name="description"
+      content="Research-grade plagiarism detection with multi-algorithm similarity analysis. Compare documents, paste text, or upload files for instant results."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Animated background blobs -->
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob blob-3" aria-hidden="true"></div>
+
+    <div class="page-shell">
+      <!-- ── Navigation ─────────────────────────────── -->
+      <header class="topbar">
+        <nav class="nav container">
+          <div class="brand-wrap" data-motion="fade-down">
+            <span class="brand-mark">P</span>
+            <div>
+              <p class="brand-name">Plagiarism</p>
+              <p class="brand-subtitle">Detection Studio</p>
+            </div>
+          </div>
+
+          <div class="nav-links" data-motion="fade-down" style="--delay:0.1s">
+            <a href="#overview">Overview</a>
+            <a href="#algorithms">Algorithms</a>
+            <a href="#compare">Compare</a>
+          </div>
+
+          <button class="nav-button" onclick="document.querySelector('#compare').scrollIntoView({behavior:'smooth'})" data-motion="fade-down" style="--delay:0.2s">
+            Live Analysis
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <!-- ── Hero ──────────────────────────────────── -->
+        <section class="hero container reveal">
+          <div class="hero-copy">
+            <div class="hero-badge" data-motion="fade-up">
+              <span class="dot-pulse"></span>
+              Research-grade similarity analysis
+            </div>
+
+            <h1>
+              Detect plagiarism<br />
+              before it becomes<br />
+              a <em>reputation risk.</em>
+            </h1>
+
+            <p class="hero-text">
+              A precision detection engine designed to compare pasted text, uploaded files, and extracted document content using a six-model similarity framework.
+            </p>
+
+            <div class="cta-row">
+              <a href="#compare" class="primary-btn">Run comparison</a>
+              <a href="#algorithms" class="secondary-btn">Explore methods</a>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric-chip" data-motion="fade-up" style="--delay:0.1s">
+                <strong>6</strong>
+                <span>Comparison models</span>
+              </div>
+              <div class="metric-chip" data-motion="fade-up" style="--delay:0.2s">
+                <strong>98%</strong>
+                <span>Signal clarity</span>
+              </div>
+              <div class="metric-chip" data-motion="fade-up" style="--delay:0.3s">
+                <strong>24/7</strong>
+                <span>Decision support</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero dashboard preview -->
+          <div class="hero-visual">
+            <div class="glass-panel feature-panel" data-motion="float">
+              <div class="panel-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span style="margin-left:auto; font-size:0.7rem; color:var(--muted); font-weight:600">Analysis Report</span>
+              </div>
+
+              <div class="bar-group">
+                <div class="bar bar-1"></div>
+                <div class="bar bar-2"></div>
+                <div class="bar bar-3"></div>
+                <div class="bar bar-4"></div>
+              </div>
+
+              <div class="score-ring">
+                <div class="score-inner">89%</div>
+              </div>
+
+              <div class="mini-grid">
+                <div class="mini-card">
+                  <span class="label">Jaccard</span>
+                  <strong>0.84</strong>
+                </div>
+                <div class="mini-card">
+                  <span class="label">Cosine</span>
+                  <strong>0.87</strong>
+                </div>
+                <div class="mini-card">
+                  <span class="label">Rabin-Karp</span>
+                  <strong>0.81</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Brand strip ────────────────────────────── -->
+        <section class="brand-strip container reveal">
+          <div class="brand-strip-inner">
+            <span>Designed for academic review</span>
+            <div class="brand-pills">
+              <span>Research</span>
+              <span>Education</span>
+              <span>Compliance</span>
+              <span>Integrity teams</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Feature showcase ───────────────────────── -->
+        <section class="feature-showcase container reveal">
+          <div class="section-heading align-left">
+            <p class="eyebrow">Platform layers</p>
+            <h2>Premium tooling for real reviewers.</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card feature-card-lg">
+              <div class="feature-head">
+                <span class="feature-kicker">Signal stack</span>
+                <span class="feature-badge">Live</span>
+              </div>
+              <h3>Multi-model similarity engine</h3>
+              <p>
+                Blend lexical overlap, sequence matching, and rolling-hash analysis into one transparent verdict for higher-confidence decisions.
+              </p>
+              <ul>
+                <li>Jaccard</li>
+                <li>Cosine</li>
+                <li>Dice</li>
+                <li>Levenshtein</li>
+                <li>LCS</li>
+                <li>Rabin-Karp</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <div class="mini-stat">
+                <span>89%</span>
+              </div>
+              <h3>Document clarity</h3>
+              <p>Cleaner parsing, stronger normalization, and clearer extracted text output.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="mini-stat accent">
+                <span>6</span>
+              </div>
+              <h3>Comparison models</h3>
+              <p>Multiple measures reduce false confidence and improve explainability.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── Platform section ───────────────────────── -->
+        <section class="platform container reveal">
+          <div class="platform-copy">
+            <p class="eyebrow">Why this scales</p>
+            <h2>Built for growing review pipelines, not just one-off checks.</h2>
+            <p>
+              The experience combines editorial clarity, technical depth, and a review-friendly data system so the product can evolve from a prototype into a classroom, compliance, or publishing workflow.
+            </p>
+          </div>
+
+          <div class="platform-rail">
+            <article class="rail-card">
+              <span class="rail-tag">01</span>
+              <h3>Multi-format intake</h3>
+              <p>PDF, DOCX, TXT, and typed content all feed the same scoring engine.</p>
+            </article>
+            <article class="rail-card active">
+              <span class="rail-tag">02</span>
+              <h3>Confidence model</h3>
+              <p>Six algorithms blend into one verdict rather than relying on a single metric.</p>
+            </article>
+            <article class="rail-card">
+              <span class="rail-tag">03</span>
+              <h3>Review workflow</h3>
+              <p>Clear output is designed for continuing expansion into reports and audits.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── Insight panel ───────────────────────────── -->
+        <section class="insight-panel container reveal">
+          <div class="insight-board">
+            <div class="insight-copy">
+              <p class="eyebrow">Risk breakdown</p>
+              <h2>High signal, low clutter.</h2>
+              <p>
+                Each comparison surfaces the patterns that matter most so users can see where similarity is happening and how strong the evidence is.
+              </p>
+            </div>
+
+            <div class="insight-list">
+              <div class="insight-item">
+                <span class="label">Lexical overlap</span>
+                <strong>84%</strong>
+              </div>
+              <div class="insight-item">
+                <span class="label">Sequence matches</span>
+                <strong>71%</strong>
+              </div>
+              <div class="insight-item">
+                <span class="label">Hash-pattern drift</span>
+                <strong>63%</strong>
+              </div>
+              <div class="insight-item">
+                <span class="label">Review confidence</span>
+                <strong>92%</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── Workflow section ───────────────────────── -->
+        <section class="flow container reveal">
+          <div class="section-heading align-left">
+            <p class="eyebrow">Workflow</p>
+            <h2>An information-rich system built to expand.</h2>
+          </div>
+
+          <div class="flow-grid">
+            <article class="step-card">
+              <span>01</span>
+              <h3>Capture</h3>
+              <p>Paste text or upload documents from a range of sources without friction.</p>
+            </article>
+            <article class="step-card">
+              <span>02</span>
+              <h3>Analyze</h3>
+              <p>Normalize content and compare across lexical, sequence, and hash-based models.</p>
+            </article>
+            <article class="step-card">
+              <span>03</span>
+              <h3>Decide</h3>
+              <p>Surface a verdict with transparency, clarity, and actionable review context.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── Overview ───────────────────────────────── -->
+        <section id="overview" class="overview container reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Overview</p>
+            <h2>Precision built for text integrity.</h2>
+          </div>
+
+          <div class="overview-grid">
+            <article class="info-card accent-card">
+              <span class="card-number">01</span>
+              <h3>Document extraction</h3>
+              <p>
+                Uploaded PDFs, Word files, and text sources are read and converted into analyzable content for comparison.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <span class="card-number">02</span>
+              <h3>Similarity scoring</h3>
+              <p>
+                Multiple mathematical methods produce a stronger interpretation than a single metric alone.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <span class="card-number">03</span>
+              <h3>Decision-ready output</h3>
+              <p>
+                Human-readable risk indicators highlight likely paraphrasing, copied passages, and suspicious structure.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── Algorithms ─────────────────────────────── -->
+        <section id="algorithms" class="algorithms container reveal">
+          <div class="section-heading align-left">
+            <p class="eyebrow">Algorithm engine</p>
+            <h2>Mathematical models behind the verdict.</h2>
+          </div>
+
+          <div class="algorithm-grid">
+            <article class="algo-card">
+              <div class="algo-topline"><span>Jaccard</span><strong>Set overlap</strong></div>
+              <p>Measures shared unique terms against total unique terms to detect lexical similarity.</p>
+            </article>
+            <article class="algo-card">
+              <div class="algo-topline"><span>Cosine</span><strong>Vector angle</strong></div>
+              <p>Compares word frequencies in vector space to reveal structural similarity beyond exact copy.</p>
+            </article>
+            <article class="algo-card">
+              <div class="algo-topline"><span>Dice</span><strong>Binary overlap</strong></div>
+              <p>Emphasizes common matching terms while penalizing differences in dominated vocabularies.</p>
+            </article>
+            <article class="algo-card">
+              <div class="algo-topline"><span>Levenshtein</span><strong>Edit distance</strong></div>
+              <p>Captures small textual edits and word substitutions that indicate near-copy transformations.</p>
+            </article>
+            <article class="algo-card">
+              <div class="algo-topline"><span>LCS</span><strong>Sequence match</strong></div>
+              <p>Measures the longest shared sequence to detect recurring phrase structures within documents.</p>
+            </article>
+            <article class="algo-card">
+              <div class="algo-topline"><span>Rabin-Karp</span><strong>Rolling hash</strong></div>
+              <p>Uses a rolling hash to scan repeated windows and detect pattern overlap efficiently across texts.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── Live Compare ───────────────────────────── -->
+        <section id="compare" class="compare container reveal">
+          <div class="section-heading align-left">
+            <p class="eyebrow">Live analysis</p>
+            <h2>Compare text or uploaded files instantly.</h2>
+          </div>
+
+          <div class="compare-layout">
+            <div class="input-panel">
+              <div class="panel-header compare-header">
+                <span>Document A</span>
+                <div class="header-actions">
+                  <label class="file-input">
+                    <input type="file" accept=".txt,.rtf,.pdf,.doc,.docx" data-target="source" />
+                    <span>Upload file</span>
+                  </label>
+                  <button class="sample-btn" data-sample="source">Load sample</button>
+                </div>
+              </div>
+              <textarea id="sourceText" rows="14" aria-label="Source document" placeholder="Paste or type Document A here…"></textarea>
+              <div id="sourceMeta" class="document-meta">Source document: sample text</div>
+            </div>
+
+            <div class="input-panel">
+              <div class="panel-header compare-header">
+                <span>Document B</span>
+                <div class="header-actions">
+                  <label class="file-input">
+                    <input type="file" accept=".txt,.rtf,.pdf,.doc,.docx" data-target="target" />
+                    <span>Upload file</span>
+                  </label>
+                  <button class="sample-btn" data-sample="target">Load sample</button>
+                </div>
+              </div>
+              <textarea id="targetText" rows="14" aria-label="Target document" placeholder="Paste or type Document B here…"></textarea>
+              <div id="targetMeta" class="document-meta">Comparison document: sample text</div>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="compareBtn" class="primary-btn large">Analyze documents</button>
+            <button id="resetBtn" class="secondary-btn large">Clear</button>
+          </div>
+
+          <div class="result-panel glass-panel">
+            <div class="result-topline">
+              <div>
+                <p class="eyebrow small">Verdict</p>
+                <h3 id="verdictLabel">Awaiting analysis</h3>
+              </div>
+              <div class="score-pill" id="overallScore">0%</div>
+            </div>
+
+            <div class="result-meter">
+              <div id="scoreBar"></div>
+            </div>
+
+            <div class="result-metrics" id="resultMetrics"></div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ── Footer ──────────────────────────────────── -->
+      <footer class="footer container">
+        <div class="footer-inner">
+          <div>
+            <p class="brand-name">Plagiarism</p>
+            <p class="brand-subtitle">Detection Studio</p>
+          </div>
+          <div class="footer-links">
+            <a href="#overview">Overview</a>
+            <a href="#algorithms">Algorithms</a>
+            <a href="#compare">Compare</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ── Libraries ───────────────────────────────── -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.1/mammoth.browser.min.js"></script>
+
+    <!-- Motion.js (Framer Motion for vanilla JS) via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+
+    <!-- App logic -->
+    <script type="module" src="script.js"></script>
+
+    <!-- Motion.js animations bootstrap -->
+    <script>
+      // Wait until Motion is available
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof Motion === 'undefined') return;
+
+        const { animate, inView, stagger } = Motion;
+
+        // ── Navbar elements entrance ─────────────
+        animate(
+          '[data-motion="fade-down"]',
+          { opacity: [0, 1], y: [-20, 0] },
+          { duration: 0.6, delay: stagger(0.1), easing: [0.2, 0, 0, 1] }
+        );
+
+        // ── Hero badge bounce in ─────────────────
+        const badge = document.querySelector('.hero-badge');
+        if (badge) {
+          animate(badge,
+            { opacity: [0, 1], scale: [0.8, 1], y: [-10, 0] },
+            { duration: 0.55, delay: 0.3, easing: [0.34, 1.56, 0.64, 1] }
+          );
+        }
+
+        // ── Hero metrics chips stagger in ────────
+        animate(
+          '.metric-chip',
+          { opacity: [0, 1], y: [20, 0] },
+          { duration: 0.5, delay: stagger(0.1, { start: 0.6 }), easing: [0.2, 0, 0, 1] }
+        );
+
+        // ── Feature cards animate on scroll ─────
+        inView('.feature-card', (info) => {
+          animate(info.target,
+            { opacity: [0, 1], y: [30, 0] },
+            { duration: 0.6, easing: [0.2, 0, 0, 1] }
+          );
+        }, { margin: '-60px' });
+
+        inView('.algo-card', (info) => {
+          animate(info.target,
+            { opacity: [0, 1], scale: [0.95, 1], y: [20, 0] },
+            { duration: 0.55, easing: [0.2, 0, 0, 1] }
+          );
+        }, { margin: '-60px' });
+
+        inView('.rail-card', (info) => {
+          animate(info.target,
+            { opacity: [0, 1], x: [30, 0] },
+            { duration: 0.5, easing: [0.2, 0, 0, 1] }
+          );
+        }, { margin: '-60px' });
+
+        inView('.step-card', (info) => {
+          animate(info.target,
+            { opacity: [0, 1], y: [25, 0] },
+            { duration: 0.55, easing: [0.34, 1.2, 0.64, 1] }
+          );
+        }, { margin: '-60px' });
+
+        inView('.info-card', (info) => {
+          animate(info.target,
+            { opacity: [0, 1], y: [20, 0] },
+            { duration: 0.5, easing: [0.2, 0, 0, 1] }
+          );
+        }, { margin: '-60px' });
+
+        inView('.insight-item', (info) => {
+          animate(info.target,
+            { opacity: [0, 1], scale: [0.92, 1] },
+            { duration: 0.45, easing: [0.34, 1.4, 0.64, 1] }
+          );
+        }, { margin: '-60px' });
+
+        // ── Score bar animated on compare ────────
+        const compareBtn = document.querySelector('#compareBtn');
+        if (compareBtn) {
+          compareBtn.addEventListener('click', () => {
+            const scoreBar = document.querySelector('#scoreBar');
+            const scorePill = document.querySelector('#overallScore');
+            if (scoreBar && scorePill) {
+              // Pulse the result panel when analysis runs
+              const resultPanel = document.querySelector('.result-panel');
+              if (resultPanel) {
+                animate(resultPanel,
+                  { scale: [0.99, 1] },
+                  { duration: 0.4, easing: [0.34, 1.56, 0.64, 1] }
+                );
+              }
+
+              // Animate metric items in
+              setTimeout(() => {
+                const metricItems = document.querySelectorAll('.metric-item');
+                if (metricItems.length) {
+                  animate(metricItems,
+                    { opacity: [0, 1], y: [12, 0] },
+                    { duration: 0.4, delay: stagger(0.07), easing: [0.2, 0, 0, 1] }
+                  );
+                }
+              }, 150);
+            }
+          });
+        }
+
+        // ── Hover tilt on cards ──────────────────
+        const tiltCards = document.querySelectorAll('.feature-card, .info-card, .step-card');
+        tiltCards.forEach(card => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const dx = (e.clientX - cx) / (rect.width / 2);
+            const dy = (e.clientY - cy) / (rect.height / 2);
+            animate(card,
+              { rotateX: -dy * 3, rotateY: dx * 3 },
+              { duration: 0.15, easing: 'linear' }
+            );
+          });
+          card.addEventListener('mouseleave', () => {
+            animate(card,
+              { rotateX: 0, rotateY: 0 },
+              { duration: 0.4, easing: [0.2, 0, 0, 1] }
+            );
+          });
+          card.style.transformStyle = 'preserve-3d';
+        });
+
+        // ── Blob parallax on scroll (native) ─────
+        const blob1 = document.querySelector('.blob-1');
+        const blob2 = document.querySelector('.blob-2');
+        if (blob1 || blob2) {
+          window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+            const progress = scrollY / maxScroll;
+            if (blob1) blob1.style.transform = `translate(${progress * 22}px, ${progress * -44}px)`;
+            if (blob2) blob2.style.transform = `translate(${progress * -22}px, ${progress * 32}px)`;
+          }, { passive: true });
+        }
+
+        // ── Count-up animation for hero metrics ──
+        const chips = document.querySelectorAll('.metric-chip strong');
+        const animateCount = (el) => {
+          const target = el.textContent;
+          const isPercent = target.includes('%');
+          const num = parseInt(target);
+          if (isNaN(num)) return;
+          let start = 0;
+          const duration = 1200;
+          const startTime = performance.now();
+          const tick = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(start + (num - start) * eased);
+            el.textContent = isPercent ? `${current}%` : `${current}`;
+            if (progress < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        };
+
+        inView('.hero-metrics', () => {
+          setTimeout(() => chips.forEach(animateCount), 400);
+        });
+      });
+    </script>
+  </body>
+</html>
